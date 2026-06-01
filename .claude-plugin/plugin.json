@@ -1,0 +1,15 @@
+{
+  "name": "fudis",
+  "displayName": "Fudis 4 Business",
+  "version": "1.1.0",
+  "description": "Restaurant intelligence for Claude Code — bookings, analytics, and customer CRM for restaurant operators.",
+  "author": {
+    "name": "Fudis",
+    "url": "https://business.fudis.app"
+  },
+  "homepage": "https://business.fudis.app",
+  "repository": "https://github.com/theFudis/fudis-claude-plugin",
+  "license": "Elastic-2.0",
+  "keywords": ["restaurant", "crm", "analytics", "bookings", "hospitality", "fudis"],
+  "defaultEnabled": false
+}
