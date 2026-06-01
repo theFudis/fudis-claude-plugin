@@ -1,145 +1,151 @@
-# Fudis 4 Business — Claude Code Plugin
-
-> Restaurant intelligence for Claude Code. Connect your Fudis account and get bookings, customer analytics, CRM, and campaign tools directly in your AI assistant.
-
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/theFudis/fudis-claude-plugin/releases)
-[![License](https://img.shields.io/badge/license-Elastic--2.0-blue)](LICENSE)
-[![Marketplace](https://img.shields.io/badge/marketplace-fudi-orange)](https://github.com/theFudis/fudis-marketplace)
-
-> **License notice:** Free to install and use for your restaurant. Not permitted for resale, courses, agency services, or redistribution. See [NOTICE.md](NOTICE.md).
-
----
-
-## What This Is
-
-**Fudis 4 Business** is a Claude Code plugin that connects your restaurant's data — guests, bookings, revenue, and menu performance — to Claude's reasoning. Instead of logging into a dashboard, you ask questions and get answers backed by live data.
-
-It's built on the Retention-Led Growth philosophy: the guests you already have are your most valuable asset. The plugin is designed to surface who's at risk, who needs attention today, and what actions have the highest revenue impact.
-
-Works for any restaurant, any currency, any language. Claude responds in the same language you write in.
-
----
-
-## Installation
-
-### Option A — Claude Code CLI (recommended)
-
-```bash
-# Add the Fudis marketplace
-claude plugin marketplace add theFudis/fudis-marketplace
-
-# Install the plugin
-claude plugin install fudis@fudi
-
-# Enable it
-claude plugin enable fudis@fudi
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   🍽️  FUDIS 4 BUSINESS                                       ║
+║   Claude Code Plugin · v1.1.0                                 ║
+║                                                               ║
+║   16 skills · 4 agents · 1 MCP · any currency · any language  ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
 ```
 
-On first use, Claude Code will prompt you to authenticate with your Fudis account (OAuth).
+[![License](https://img.shields.io/badge/license-Elastic--2.0-4B6FFF?style=flat-square)](LICENSE)
+[![Marketplace](https://img.shields.io/badge/marketplace-fudi-FF6B35?style=flat-square)](https://github.com/theFudis/fudis-marketplace)
+[![MCP](https://img.shields.io/badge/MCP-mcp.fudis.app-22C55E?style=flat-square)](https://mcp.fudis.app)
 
-### Option B — Claude Desktop
-
-1. Download [`fudis-claude-plugin.zip`](https://github.com/theFudis/fudis-claude-plugin/releases/latest)
-2. Open Claude Desktop → Settings → Plugins → **Upload local plugin**
-3. Drop the ZIP file and click Upload
-4. Authenticate via your Fudis account when prompted
+> **Not for resale, courses, or redistribution.** See [NOTICE.md](NOTICE.md).
 
 ---
 
-## Skills Reference
+## What lives in this repo
 
-### Analytics & Operations
+A Claude Code plugin that connects restaurant operators to their live data. No dashboard. No app switching. You ask Claude, Claude calls the tools, you get answers.
 
-Skills that connect to your live Fudis data. Require a Fudis operator account.
-
-| Skill | Arguments | What it does |
-|---|---|---|
-| `/fudis:briefing` | `[date]` | Daily ops summary — reservations, priority actions, segment health. Default: today. |
-| `/fudis:retention` | `[days]` | Retention-Led Growth dashboard — churn risk, win-back targets, CLV top guests, revenue signal. Default: last 90 days. |
-| `/fudis:winback` | `[segment\|name]` | Win-back execution — prioritized list with ready-to-send message drafts per guest. Segments: `at-risk`, `lost`, `one-timers`. |
-| `/fudis:vip` | `[cold\|upcoming\|manage name]` | VIP tier management — who they are, who's going cold, upcoming visits this week. |
-| `/fudis:guests` | `[name or phone]` | Guest CRM — look up any customer, view their history and CLV, manage VIP status, notes, and preferences. |
-| `/fudis:bookings` | `[date\|create\|cancel\|reschedule]` | Reservations — list today's floor, create bookings (preview before confirm), update status, reschedule. |
-| `/fudis:campaigns` | `[winback\|vip\|new]` | Campaign planning — 2-3 campaign ideas with target segment, message angle, and revenue potential. |
-| `/fudis:menu` | `[engineering\|affinity\|performance\|dish name]` | Menu intelligence — quadrant analysis, basket affinity pairs, dead items, and one recommended action. |
-| `/fudis:revenue` | `[trends\|forecast]` | Revenue trends + 30-day demand forecast with operational actions for peak dates. |
-| `/fudis:weekly` | `[summary\|full]` | Weekly performance report — revenue, retention, bookings, menu highlights, next week outlook. |
-| `/fudis:setup` | `[metric\|getting-started\|segments]` | Onboarding — metric explanations using your own live numbers, not abstract examples. |
-
-### Content Skills
-
-Skills that work without a Fudis account. Useful for any restaurant.
-
-| Skill | Arguments | What it does |
-|---|---|---|
-| `/fudis:review` | `[paste review text]` | Craft responses to Google, TripAdvisor, or any platform — positive, negative, or aggressive. |
-| `/fudis:menu-copy` | `[dish name\|section\|review]` | Write menu item descriptions, improve existing copy, or restructure sections. |
-| `/fudis:message` | `[occasion or context]` | Draft any direct guest message — event, VIP invite, post-visit follow-up, apology, booking reminder. |
-| `/fudis:event` | `[type, date, capacity]` | Plan a special event — structure, pricing mechanics, guest communications, ops checklist. |
-| `/fudis:promo` | `[fill slow hours\|reward regulars\|launch new dish]` | Design brand-safe promotions that don't train guests to wait for discounts. |
+Built on **Retention-Led Growth** — the philosophy that the guests you already have are your highest-ROI asset. Every skill in this plugin is designed around that lens: who's at risk, who deserves attention today, what action moves the most revenue.
 
 ---
 
-## Agents
-
-Agents handle multi-step, open-ended tasks that span multiple data sources. Invoke them by asking Claude to use a specific agent, or let `restaurant-ops` handle general questions.
-
-| Agent | Model | Best for |
-|---|---|---|
-| `restaurant-ops` | Sonnet | General ops — any multi-step question combining bookings, guests, analytics, and menu |
-| `retention-analyst` | Sonnet | Deep churn investigation — root cause analysis, pattern detection, quantified action plans |
-| `campaign-strategist` | Sonnet | Full campaign briefs — target list, message drafts per guest, timing, ROI estimate |
-| `menu-optimizer` | Sonnet | Strategic menu decisions — remove, reprice, bundle, and push with data justification |
-
----
-
-## Architecture
+## 📁 Repo structure
 
 ```
 fudis-claude-plugin/
-├── .claude-plugin/
-│   └── plugin.json          — plugin manifest
-├── .mcp.json                — connects to mcp.fudis.app
-├── settings.json            — default agent: restaurant-ops
-├── hooks/
-│   └── hooks.json           — SessionStart: shows connected restaurant
-├── references/              — shared across all skills and agents
-│   ├── config.md            — currency, language, and market context rules
-│   ├── benchmarks.md        — industry benchmarks (North America, regional-tagged)
-│   └── terminology.md       — universal glossary: RFM, CLV, churn, segments
-├── agents/                  — 4 specialized agents
-└── skills/                  — 16 skills (11 with MCP, 5 content-only)
+│
+├── 🔧 .claude-plugin/plugin.json     plugin manifest (name, version, license)
+├── 🔌 .mcp.json                      connects to mcp.fudis.app via OAuth
+├── ⚙️  settings.json                  default agent → restaurant-ops
+│
+├── 🪝 hooks/
+│   └── hooks.json                    SessionStart: shows connected restaurant + skill list
+│
+├── 📚 references/                    shared across ALL skills and agents
+│   ├── config.md                     how currency, language & market context are resolved
+│   ├── benchmarks.md                 industry benchmarks (North America, regional-tagged)
+│   └── terminology.md                universal glossary: RFM, CLV, churn, segments
+│
+├── 🤖 agents/                        4 specialized agents (see below)
+│
+└── 🎯 skills/                        16 skills across 2 tiers (see below)
     └── menu-copy/
         └── references/
-            └── examples.md  — multi-cuisine menu copy examples
+            └── examples.md           multi-cuisine menu copy examples (loaded on demand)
 ```
 
-**Plugin-level references** (`references/`) are shared across all skills — loaded on demand when relevant, not injected into every conversation. This keeps the always-on token cost to ~1,100 tokens.
+---
 
-**Currency and language** are resolved dynamically from your restaurant's data and from the language you write in. Nothing is hardcoded.
+## 🎯 Skills — 16 total
+
+### Tier 1 · Analytics & Operations
+> Require a Fudis operator account. Call the live MCP at mcp.fudis.app.
+
+| Skill | Args | What it pulls | What you get |
+|---|---|---|---|
+| 🌅 `/fudis:briefing` | `[date]` | bookings · actions · segments · overview | Daily ops summary. Read at shift start. |
+| 📊 `/fudis:retention` | `[days]` | segments · CLV · triggers · revenue | Full Retention-Led Growth dashboard. Who's churning, who to call. |
+| 🪃 `/fudis:winback` | `[segment\|name]` | triggers · CLV · profiles | Prioritized list + ready-to-send message drafts per guest. |
+| ⭐ `/fudis:vip` | `[cold\|upcoming\|manage]` | CLV · bookings · triggers | VIP tier — who they are, who's going cold, this week's VIP visits. |
+| 👤 `/fudis:guests` | `[name or phone]` | search · profile | Full guest CRM: history, CLV, segment, VIP status, notes, preferences. |
+| 📅 `/fudis:bookings` | `[date\|create\|cancel\|reschedule]` | bookings | List floor, create (preview first), update status, reschedule. |
+| 📣 `/fudis:campaigns` | `[winback\|vip\|new]` | triggers · segments · CLV | 2-3 concrete campaign ideas with segment, message angle, revenue estimate. |
+| 🍽️ `/fudis:menu` | `[engineering\|affinity\|performance\|dish]` | engineering · affinity · performance | Stars/plowhorses/puzzles/dogs · basket pairs · dead items · one action. |
+| 💰 `/fudis:revenue` | `[trends\|forecast]` | revenue · forecast | Trend direction + 30-day demand forecast + ops actions for peak dates. |
+| 📈 `/fudis:weekly` | `[summary\|full]` | revenue · segments · bookings · menu · forecast | Full week: revenue, retention, bookings, menu, next week outlook. |
+| 🎓 `/fudis:setup` | `[metric\|getting-started\|segments]` | restaurants · segments · overview | Onboarding using your own live numbers. No abstract examples. |
+
+### Tier 2 · Content Skills
+> No Fudis account needed. Works for any restaurant.
+
+| Skill | Args | What you get |
+|---|---|---|
+| ⭐ `/fudis:review` | `[review text]` | Crafted response to any online review — Google, TripAdvisor, any platform. Tone-matched to positive / constructive / aggressive. |
+| ✍️ `/fudis:menu-copy` | `[dish\|section\|review]` | Menu item descriptions, pricing framing, section restructuring. Pulls multi-cuisine examples from `references/examples.md`. |
+| 💬 `/fudis:message` | `[occasion]` | Direct guest message for any occasion — event, VIP invite, apology, post-visit, booking reminder. |
+| 🎉 `/fudis:event` | `[type, date, capacity]` | Special event plan — structure, pricing mechanics, two guest messages, ops checklist. |
+| 🎁 `/fudis:promo` | `[goal]` | Brand-safe promotion design. No percentage discounts. Mechanics that don't train guests to wait for deals. |
+
+---
+
+## 🤖 Agents — 4 specialists
+
+Agents handle open-ended, multi-step tasks. The default (`restaurant-ops`) activates automatically. Others are invoked by name.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  🏪  restaurant-ops      (default · Sonnet · medium effort)      │
+│      General ops. Any question combining bookings, guests,       │
+│      analytics, and menu. The starting point for everything.     │
+├─────────────────────────────────────────────────────────────────┤
+│  🔬  retention-analyst   (Sonnet · high effort · 20 turns)       │
+│      Deep churn investigation. Root cause, pattern detection,    │
+│      quantified action plans. Goes further than /fudis:retention │
+├─────────────────────────────────────────────────────────────────┤
+│  📢  campaign-strategist  (Sonnet · high effort · 20 turns)      │
+│      Full campaign brief. Target list, message drafts per guest, │
+│      timing, ROI estimate. Execution-ready, not ideation.        │
+├─────────────────────────────────────────────────────────────────┤
+│  🍳  menu-optimizer       (Sonnet · high effort · 15 turns)      │
+│      Data-justified menu decisions: REMOVE / REPRICE / BUNDLE /  │
+│      PUSH. Pulls engineering + affinity + performance + forecast. │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📚 Shared References
+
+Three files in `references/` are loaded on demand across all skills and agents — never injected into every session:
+
+| File | Loaded when | Contains |
+|---|---|---|
+| `config.md` | setup skill, any config question | How currency (from MCP data), language (from operator input), and market context are resolved. Nothing hardcoded. |
+| `benchmarks.md` | retention · winback · campaigns · agents | North American industry benchmarks, regionally tagged, with localization guidance |
+| `terminology.md` | setup + any metric question | Universal glossary: RFM segments, CLV, churn probability, basket affinity, campaign triggers |
+
+**Always-on token cost: ~1,100 tokens.** Skills load their references only when needed.
+
+---
+
+## ⚡ Install
+
+### Claude Code CLI
+
+```bash
+claude plugin marketplace add theFudis/fudis-marketplace
+claude plugin install fudis@fudi
+claude plugin enable fudis@fudi
+```
+
+### Claude Desktop
+
+Settings → Plugins → Upload local plugin → drop the ZIP from [Releases](https://github.com/theFudis/fudis-claude-plugin/releases/latest)
 
 ---
 
 ## Requirements
 
-- Claude Code v2.1.143 or later
-- A Fudis operator account — [business.fudis.app](https://business.fudis.app)
-- Content skills (`review`, `menu-copy`, `message`, `event`, `promo`) work without an account
+- Claude Code v2.1.143+
+- Fudis operator account at [business.fudis.app](https://business.fudis.app) *(Tier 1 skills only)*
+- Tier 2 content skills work for any restaurant without an account
 
 ---
 
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for version history.
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to extend or improve the plugin.
-
----
-
-## Support
-
-[business.fudis.app](https://business.fudis.app) · [hello@fudis.app](mailto:hello@fudis.app)
+[CHANGELOG.md](CHANGELOG.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [NOTICE.md](NOTICE.md) · [hello@fudis.app](mailto:hello@fudis.app)
