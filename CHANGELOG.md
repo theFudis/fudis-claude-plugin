@@ -6,6 +6,26 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). This pr
 
 ---
 
+## [1.2.0] — 2026-06-03
+
+### Added — Live events
+
+- **`/fudis:events`** — new Tier 1 (MCP-backed) skill for running ticketed events that already exist in Fudis. Surfaces the six new event tools on the `mcp.fudis.app` server:
+  - `list_events` — what's on, with status counts and next-date / cupos summary
+  - `get_event` — one event's full definition
+  - `list_event_occurrences` — the dates (occurrences) of an event with per-date status
+  - `list_event_attendees` — the door / guest list (issued + checked-in tickets)
+  - `check_in_attendee` — live door check-in by confirmation code (`issued → checked_in`; staff role, no capability gate)
+  - `update_occurrence_status` — change a date's status; cancelling cancels all confirmed orders and notifies every attendee (manager role)
+- SessionStart status line now advertises `/fudis:events`.
+
+### Changed
+
+- Tier 2 `/fudis:event` clarified as the event **planner** (content, no account). Live event operations now live in `/fudis:events`, mirroring the existing `bookings`(live) vs `event`(planning) split.
+- `plugin.json` description + keywords mention events; version → 1.2.0.
+
+---
+
 ## [1.1.0] — 2026-05-31
 
 ### Changed — Global architecture

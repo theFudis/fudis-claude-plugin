@@ -1,6 +1,6 @@
 ---
 name: restaurant-ops
-description: General restaurant operations agent for Fudis. Use when the operator needs multi-step analysis combining bookings, customers, analytics, and menu data — or when no specific skill covers the question.
+description: General restaurant operations agent for Fudis. Use when the operator needs multi-step analysis combining bookings, events, customers, analytics, and menu data — or when no specific skill covers the question.
 model: sonnet
 effort: medium
 maxTurns: 15

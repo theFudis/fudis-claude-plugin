@@ -2,9 +2,9 @@
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
 ║   🍽️  FUDIS 4 BUSINESS                                       ║
-║   Claude Code Plugin · v1.1.0                                 ║
+║   Claude Code Plugin · v1.2.0                                 ║
 ║                                                               ║
-║   16 skills · 4 agents · 1 MCP · any currency · any language  ║
+║   17 skills · 4 agents · 1 MCP · any currency · any language  ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -44,7 +44,7 @@ fudis-claude-plugin/
 │
 ├── 🤖 agents/                        4 specialized agents (see below)
 │
-└── 🎯 skills/                        16 skills across 2 tiers (see below)
+└── 🎯 skills/                        17 skills across 2 tiers (see below)
     └── menu-copy/
         └── references/
             └── examples.md           multi-cuisine menu copy examples (loaded on demand)
@@ -52,7 +52,7 @@ fudis-claude-plugin/
 
 ---
 
-## 🎯 Skills — 16 total
+## 🎯 Skills — 17 total
 
 ### Tier 1 · Analytics & Operations
 > Require a Fudis operator account. Call the live MCP at mcp.fudis.app.
@@ -65,6 +65,7 @@ fudis-claude-plugin/
 | ⭐ `/fudis:vip` | `[cold\|upcoming\|manage]` | CLV · bookings · triggers | VIP tier — who they are, who's going cold, this week's VIP visits. |
 | 👤 `/fudis:guests` | `[name or phone]` | search · profile | Full guest CRM: history, CLV, segment, VIP status, notes, preferences. |
 | 📅 `/fudis:bookings` | `[date\|create\|cancel\|reschedule]` | bookings | List floor, create (preview first), update status, reschedule. |
+| 🎟️ `/fudis:events` | `[name\|date\|check in\|cancel]` | events · occurrences · attendees | Live ticketed events: what's on, door/guest list, check guests in by code, put a date on sale or cancel (notifies attendees). |
 | 📣 `/fudis:campaigns` | `[winback\|vip\|new]` | triggers · segments · CLV | 2-3 concrete campaign ideas with segment, message angle, revenue estimate. |
 | 🍽️ `/fudis:menu` | `[engineering\|affinity\|performance\|dish]` | engineering · affinity · performance | Stars/plowhorses/puzzles/dogs · basket pairs · dead items · one action. |
 | 💰 `/fudis:revenue` | `[trends\|forecast]` | revenue · forecast | Trend direction + 30-day demand forecast + ops actions for peak dates. |
@@ -79,7 +80,7 @@ fudis-claude-plugin/
 | ⭐ `/fudis:review` | `[review text]` | Crafted response to any online review — Google, TripAdvisor, any platform. Tone-matched to positive / constructive / aggressive. |
 | ✍️ `/fudis:menu-copy` | `[dish\|section\|review]` | Menu item descriptions, pricing framing, section restructuring. Pulls multi-cuisine examples from `references/examples.md`. |
 | 💬 `/fudis:message` | `[occasion]` | Direct guest message for any occasion — event, VIP invite, apology, post-visit, booking reminder. |
-| 🎉 `/fudis:event` | `[type, date, capacity]` | Special event plan — structure, pricing mechanics, two guest messages, ops checklist. |
+| 🎉 `/fudis:event` | `[type, date, capacity]` | *Plans* a new special event — structure, pricing mechanics, two guest messages, ops checklist. (To run events that already exist in Fudis, use the live `/fudis:events` skill above.) |
 | 🎁 `/fudis:promo` | `[goal]` | Brand-safe promotion design. No percentage discounts. Mechanics that don't train guests to wait for deals. |
 
 ---
