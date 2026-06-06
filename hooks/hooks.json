@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "The Fudis plugin just loaded. Silently call list_my_restaurants to confirm which restaurant is connected. Then output a single compact status line: '🍽️ Fudis connected — [restaurant name] · skills: /fudis:briefing :retention :guests :bookings :events :vip :winback :campaigns :menu :revenue :weekly :setup'. Nothing else — no questions, no elaboration. Just the status line."
+            "prompt": "The Fudis plugin just loaded. Silently call list_my_restaurants to confirm which restaurant is connected. Then output a single compact status line: '🍽️ Fudis connected — [restaurant name] · skills: /fudis:briefing :retention :guests :bookings :events :vip :winback :campaigns :menu :revenue :finance :weekly :setup'. Nothing else — no questions, no elaboration. Just the status line."
           }
         ]
       }

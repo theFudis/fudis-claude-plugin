@@ -6,6 +6,30 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). This pr
 
 ---
 
+## [1.3.0] — 2026-06-06
+
+### Added — Financial analyst
+
+- **`/fudis:finance`** — new Tier 1 skill for restaurant financial analysis. Five modes:
+  - `overview` — financial health snapshot: revenue trend, menu margin leaders, customer value, benchmark position
+  - `margin` — Kasavana-Smith menu engineering applied to the operator's real data; top margin opportunities ranked by S/ impact
+  - `pnl` — full P&L modeling with operator-supplied labor %, rent, and fixed costs; prime cost vs category benchmark; sensitivity modeling
+  - `forecast` — 30-day revenue outlook with margin and staffing implications
+  - `risk` — revenue risk, food cost pressure, customer concentration, delivery commission drag, At-Risk revenue quantified
+- **`financial-analyst` agent** — CFO-grade agent (Sonnet, high effort, 25 turns). Category-aware: automatically adapts to pollería/criollo, bar hybrid, ghost kitchen, or multi-location group. Deep-dive P&L conversations, prime cost diagnostics, delivery margin audits, cross-location CLV analysis.
+- **`references/restaurant-finance.md`** — multi-category knowledge base built from research including PANCA.pe Peru-specific benchmarks (pollería, cevichería, chifa, criollo, menú del día), NRA 2025 labor data, VantaInsights bar margin data, Dataintelo ghost kitchen economics, and multi-location purchasing leverage data. Covers: SPLH, pour cost, delivery commission reframe (net revenue vs gross), Peru IGV, informality distortion, and cross-location CLV differentiation.
+- **`references/fine-dining-cfo.md`** — fine dining CFO knowledge base (committed from prior session).
+- Category intake protocol: both the skill and agent identify restaurant type before surfacing benchmarks, ensuring correct peer comparison.
+- SessionStart status line now advertises `/fudis:finance`.
+
+### Changed
+
+- `plugin.json` version → 1.3.0; description + keywords add "financial analysis".
+- README: 18 skills, 5 agents; finance skill in Tier 1 table; financial-analyst in agent grid; two new reference files documented.
+- Skill count in hooks SessionStart prompt updated.
+
+---
+
 ## [1.2.0] — 2026-06-03
 
 ### Added — Live events

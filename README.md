@@ -2,9 +2,9 @@
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
 ║   🍽️  FUDIS 4 BUSINESS                                       ║
-║   Claude Code Plugin · v1.2.0                                 ║
+║   Claude Code Plugin · v1.3.0                                 ║
 ║                                                               ║
-║   17 skills · 4 agents · 1 MCP · any currency · any language  ║
+║   18 skills · 5 agents · 1 MCP · any currency · any language  ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -42,9 +42,9 @@ fudis-claude-plugin/
 │   ├── benchmarks.md                 industry benchmarks (North America, regional-tagged)
 │   └── terminology.md                universal glossary: RFM, CLV, churn, segments
 │
-├── 🤖 agents/                        4 specialized agents (see below)
+├── 🤖 agents/                        5 specialized agents (see below)
 │
-└── 🎯 skills/                        17 skills across 2 tiers (see below)
+└── 🎯 skills/                        18 skills across 2 tiers (see below)
     └── menu-copy/
         └── references/
             └── examples.md           multi-cuisine menu copy examples (loaded on demand)
@@ -52,7 +52,7 @@ fudis-claude-plugin/
 
 ---
 
-## 🎯 Skills — 17 total
+## 🎯 Skills — 18 total
 
 ### Tier 1 · Analytics & Operations
 > Require a Fudis operator account. Call the live MCP at mcp.fudis.app.
@@ -69,6 +69,7 @@ fudis-claude-plugin/
 | 📣 `/fudis:campaigns` | `[winback\|vip\|new]` | triggers · segments · CLV | 2-3 concrete campaign ideas with segment, message angle, revenue estimate. |
 | 🍽️ `/fudis:menu` | `[engineering\|affinity\|performance\|dish]` | engineering · affinity · performance | Stars/plowhorses/puzzles/dogs · basket pairs · dead items · one action. |
 | 💰 `/fudis:revenue` | `[trends\|forecast]` | revenue · forecast | Trend direction + 30-day demand forecast + ops actions for peak dates. |
+| 💹 `/fudis:finance` | `[overview\|margin\|pnl\|forecast\|risk]` | revenue · menu · CLV · segments | Financial health by category (pollería, bar, ghost kitchen, multi-location): prime cost, SPLH, pour cost, P&L modeling. |
 | 📈 `/fudis:weekly` | `[summary\|full]` | revenue · segments · bookings · menu · forecast | Full week: revenue, retention, bookings, menu, next week outlook. |
 | 🎓 `/fudis:setup` | `[metric\|getting-started\|segments]` | restaurants · segments · overview | Onboarding using your own live numbers. No abstract examples. |
 
@@ -106,6 +107,11 @@ Agents handle open-ended, multi-step tasks. The default (`restaurant-ops`) activ
 │  🍳  menu-optimizer       (Sonnet · high effort · 15 turns)      │
 │      Data-justified menu decisions: REMOVE / REPRICE / BUNDLE /  │
 │      PUSH. Pulls engineering + affinity + performance + forecast. │
+├─────────────────────────────────────────────────────────────────┤
+│  💹  financial-analyst    (Sonnet · high effort · 25 turns)      │
+│      Restaurant CFO. Category-aware P&L modeling, prime cost,    │
+│      SPLH, pour cost, delivery margin audit, benchmark gaps.      │
+│      Adapts to pollería / bar / ghost kitchen / multi-location.  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -120,6 +126,8 @@ Three files in `references/` are loaded on demand across all skills and agents �
 | `config.md` | setup skill, any config question | How currency (from MCP data), language (from operator input), and market context are resolved. Nothing hardcoded. |
 | `benchmarks.md` | retention · winback · campaigns · agents | North American industry benchmarks, regionally tagged, with localization guidance |
 | `terminology.md` | setup + any metric question | Universal glossary: RFM segments, CLV, churn probability, basket affinity, campaign triggers |
+| `fine-dining-cfo.md` | financial-analyst agent · /fudis:finance (fine dining) | Fine dining CFO knowledge base: RevPASH, prime cost, menu engineering formulas, Peru IGV, Danny Meyer hospitality model |
+| `restaurant-finance.md` | financial-analyst agent · /fudis:finance (all categories) | Multi-category financial reference: pollería, bar hybrid, ghost kitchen, multi-location — Peru-specific benchmarks, SPLH, pour cost, delivery commission economics |
 
 **Always-on token cost: ~1,100 tokens.** Skills load their references only when needed.
 
